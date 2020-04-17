@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block title%}My blog - Контакты{% endblock %}
+
+{% block content%}
+    <p>Заполните форму для получения обратной связи:</p>
+
+    <p style="color:red; font-weight:bold">{{ error }}</p>
+    <p style="color:green; font-weight:bold">{{ message }}</p>
+
+    <form method="post" action="/contacts">
+         {% csrf_token %}
+        <input style="width:220px;" type="text" name="name" placeholder="Имя" />
+        <br /><br />
+        <input style="width:220px;" type="text" name="email" placeholder="Эл.почта" />
+        <br /><br />
+        <textarea style="width:550px; height:150px;" name="text" placeholder="Текст"></textarea>
+        <br /><br />
+        <input type="submit" value="Отправить" />
+    </form>
+{% endblock %}

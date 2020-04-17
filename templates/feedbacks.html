@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block title%}My blog - Обратная связь{% endblock %}
+
+{% block content%}
+<p>{{ date }}</p>
+<p>{{ name }}</p>
+<p>{{ email }}</p>
+<p>{{ text|safe }}</p>
+
+    <h2>Полученная обратная связь</h2>
+
+    <table>
+        <tr>
+           <td><b>Дата</b></td><td><b>Название</b></td><td><b>Email</b></td><td><b>Text</b></td>
+        </tr>
+        {% for feedback in feedbacks %}
+        <tr>
+            <td>{{ feedback.date }}</td>
+            <td>{{ feedback.name }}</td>
+            <td>{{ feedback.email }}</td>
+            <td>{{ feedback.text }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+{% endblock %}

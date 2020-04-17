@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block title%}My blog - {{ name }}{% endblock %}
+
+{% block content%}
+
+<div class="header">
+    <h2>Публикация </br> "{{ name }}"</h2>
+</div>
+<p>{{ date }}</p>
+<p>{{ text|safe }}</p>
+
+{% endblock %}
